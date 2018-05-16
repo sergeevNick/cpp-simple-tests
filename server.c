@@ -81,11 +81,10 @@ void getOSInfo() {
 	struct utsname sysinfo;
 	uname(&sysinfo);
 
+	strcat(res, "System name:\n");
 	strcat(res, sysinfo.sysname);
-	strcat(res, "\n");
-	strcat(res, sysinfo.version);
 	printf("%s\n%s\n", "System name:", sysinfo.sysname);
-	printf("%s\n%s\n", "System version:", sysinfo.version);
+
 
 	send(sock, res, strlen(res), 0);
 }

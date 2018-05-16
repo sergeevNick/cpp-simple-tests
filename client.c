@@ -37,7 +37,7 @@ void should_get_system_info (CuTest* testContext) {
 send(sock, message3, sizeof(message3), 0);
     recv(sock, buf, sizeof(buf), 0);
 
-  CuAssertStrEquals(testContext, "Linux\n#135-Ubuntu SMP Fri Jan 19 11:48:36 UTC 2018", buf);
+  CuAssertStrEquals(testContext, "System name:\nLinux", buf);
 }
 
 CuSuite* test_suite() {
