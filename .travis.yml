@@ -1,6 +1,7 @@
 language: c
 compiler: gcc
-script: gcc server.c -o server
-./server
-gcc CuTest.c client.c
-./a.out 
+script: 
+- gcc server.c -o server
+- ./server
+- gcc CuTest.c client.c
+- ./a.out 
