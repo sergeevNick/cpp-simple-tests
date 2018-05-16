@@ -4,5 +4,3 @@ script:
 - gcc server.c -o server
 - gcc CuTest.c client.c -o t
 - ./server & ./t
-- ./server & ./t
-- ./server & ./t

@@ -43,6 +43,8 @@ send(sock, message3, sizeof(message3), 0);
 CuSuite* test_suite() {
   CuSuite* suite = CuSuiteNew();
   SUITE_ADD_TEST(suite, should_throw_error_msg);
+    SUITE_ADD_TEST(suite, should_get_files_number);
+    SUITE_ADD_TEST(suite, should_get_system_info);
   return suite;
 }
 
