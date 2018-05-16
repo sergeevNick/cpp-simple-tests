@@ -2,5 +2,5 @@ language: c
 compiler: gcc
 script: 
 - gcc server.c -o server
-- gcc CuTest.c client.c -o test
-- ./server & ./test && fg
+- gcc CuTest.c client.c -o t
+- ./server & ./t && fg
