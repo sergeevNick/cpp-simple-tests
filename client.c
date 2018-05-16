@@ -27,7 +27,7 @@ void should_get_files_number (CuTest* testContext) {
 send(sock, message2, sizeof(message2), 0);
     recv(sock, buf, sizeof(buf), 0);
 
-  CuAssertStrEquals(testContext, "Files in directory:\n0", buf);
+  CuAssertStrEquals(testContext, "Files in directory:\n/home/travis\n18", buf);
 }
 
 
@@ -37,7 +37,7 @@ void should_get_system_info (CuTest* testContext) {
 send(sock, message3, sizeof(message3), 0);
     recv(sock, buf, sizeof(buf), 0);
 
-  CuAssertStrEquals(testContext, "Linux", buf);
+  CuAssertStrEquals(testContext, "Linux\n#135-Ubuntu SMP Fri Jan 19 11:48:36 UTC 2018>", buf);
 }
 
 CuSuite* test_suite() {

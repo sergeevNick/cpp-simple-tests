@@ -81,9 +81,8 @@ void getOSInfo() {
 	struct utsname sysinfo;
 	uname(&sysinfo);
 
-	strcat(res, "System name:\n");
 	strcat(res, sysinfo.sysname);
-	strcat(res, "\nSystem version:\n");
+	strcat(res, "\n");
 	strcat(res, sysinfo.version);
 	printf("%s\n%s\n", "System name:", sysinfo.sysname);
 	printf("%s\n%s\n", "System version:", sysinfo.version);
