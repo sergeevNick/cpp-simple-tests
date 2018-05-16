@@ -17,7 +17,7 @@ void should_throw_error_msg (CuTest* testContext) {
 send(sock, message, sizeof(message), 0);
     recv(sock, buf, sizeof(buf), 0);
 
-  CuAssertStrEquals(testContext, "1There is no file or directory:\nNon exisnant folder", buf);
+  CuAssertStrEquals(testContext, "There is no file or directory:\nNon exisnant folder", buf);
 }
 
 
