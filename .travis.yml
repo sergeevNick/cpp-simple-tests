@@ -3,4 +3,4 @@ compiler: gcc
 script: 
 - gcc server.c -o server
 - gcc CuTest.c client.c -o test
-- ./server & /a.out && fg
+- ./server & ./test && fg
