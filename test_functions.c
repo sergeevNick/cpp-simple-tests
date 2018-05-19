@@ -135,7 +135,7 @@ void should_get_system_info (CuTest* testContext) {
 
 char *returned_str = manager(message3);
 
-  CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
+  CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
 }
 
 
@@ -158,8 +158,8 @@ int all_tests()
 	CuSuiteSummary(suite, output);
 	CuSuiteDetails(suite, output);
 	printf("%s\n", output->buffer);
- //   CuStringDelete(output);
- //   CuSuiteDelete(suite);
+    CuStringDelete(output);
+    CuSuiteDelete(suite);
     return suite->failCount;
     
 }
