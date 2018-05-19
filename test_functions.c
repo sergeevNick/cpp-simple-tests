@@ -80,7 +80,8 @@ const char *  getFilesNumber(char * path) {
 
 	send(sock, res, strlen(res), 0);
 	closedir(d);
-    return(res);
+    
+    return res;
 }
 
 const char *  getOSInfo() {
@@ -91,21 +92,21 @@ const char *  getOSInfo() {
 	strcat(res, "System name:\n");
 	strcat(res, sysinfo.sysname);
 	
-    return(res);
+    return res;
 }
 
-void manager(char * buf) {
+const char *  manager(char * buf) {
 	char task = '0';
 	task = buf[0];
 	buf++;
 	printf("%c\n", task);
 
 	if (task == LS)
-		getLS(buf);
+        return getLS(buf);
 	if (task == FILES_NUMBER)
-		getFilesNumber(buf);
+		return getFilesNumber(buf);
 	if (task == OS_INFO)
-		getOSInfo();
+		return getOSInfo();
 }
 
 /*----------------------------------------------------------------------
