@@ -3,6 +3,8 @@
 #include <dirent.h>
 #include <stddef.h>
 #include <sys/utsname.h>
+#include "CuTest.h"
+
 
 char LS = '1';
 char FILES_NUMBER = '2';
