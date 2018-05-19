@@ -167,7 +167,7 @@ void all_tests()
 
 
 
-void main()
+int main(void)
 {
 	all_tests();
     
