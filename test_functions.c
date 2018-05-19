@@ -168,5 +168,5 @@ void all_tests()
 int main()
 {
 	all_tests();
-    return 0;
+    
 }
