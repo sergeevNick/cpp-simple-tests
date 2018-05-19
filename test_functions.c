@@ -95,7 +95,6 @@ char * manager(char * buf) {
 	char task = '0';
 	task = buf[0];
 	buf++;
-	printf("%c\n", task);
 
 	if (task == LS)
         return getLS(buf);
@@ -130,13 +129,13 @@ char *returned_str = manager(message2);
 }
 
 
-int should_get_system_info (CuTest* testContext) {
+void should_get_system_info (CuTest* testContext) {
   memset(buf, 0, sizeof buf);
   
 
 char *returned_str = manager(message3);
 
-return CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
+  CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
 }
 
 
@@ -170,7 +169,6 @@ void all_tests()
 
 int main(void)
 {
-	 
     all_tests();
     
 }
