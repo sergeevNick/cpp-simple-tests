@@ -1,5 +1,4 @@
 #include <sys/types.h>
-#include <sys/socket.h>
 #include <netinet/in.h>
 #include <dirent.h>
 #include <stddef.h>
@@ -13,7 +12,6 @@ char message[] = "1Non exisnant folder";
 char message2[] = "2/home/travis";
 char message3[] = "3";
 
-int sock;
 char buf[1024];
 
 
@@ -38,15 +36,12 @@ const char * getLS(char * path) {
 			strcat(res, dir->d_name);
 			strcat(res, "\n");
 		}
-		printf("%s\n%s\n", "Sending folder info", path);
 	}
 	else {
 		strcat(res, "There is no file or directory:\n");
 		strcat(res, path);
-		printf("%s\n%s\n", "There is no file or directory:", path);
 	}
 
-	send(sock, res, strlen(res), 0);
 	closedir(d);
 	return res;
 }
@@ -78,7 +73,6 @@ const char *  getFilesNumber(char * path) {
 		strcat(res, path);
 	}
 
-	send(sock, res, strlen(res), 0);
 	closedir(d);
     
     return res;
