@@ -91,7 +91,7 @@ const char *  getOSInfo() {
     return res;
 }
 
-const char *  manager(char * buf) {
+char  manager(char * buf) {
 	char task = '0';
 	task = buf[0];
 	buf++;
