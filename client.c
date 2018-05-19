@@ -49,7 +49,7 @@ CuSuite* test_suite() {
 }
 
 
-void all_tests()
+int all_tests()
 {
 	CuString *output = CuStringNew();
 	CuSuite* suite = CuSuiteNew();
@@ -59,6 +59,9 @@ void all_tests()
 	CuSuiteSummary(suite, output);
 	CuSuiteDetails(suite, output);
 	printf("%s\n", output->buffer);
+    CuStringDelete(output);
+    CuSuiteDelete(suite);
+    return suite->failCount;
 }
 
 
@@ -88,11 +91,11 @@ int main()
     
   //  printf(buf);
 
-	all_tests();
+	int status = all_tests();
 
     close(sock);
 
 
 	
- //   return 0;
+    return status;
 }
