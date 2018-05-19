@@ -115,18 +115,18 @@ char * manager(char * buf) {
 void should_throw_error_msg (CuTest* testContext) {
   memset(buf, 0, sizeof buf);
   
-buf = manager(message);
+char *returned_str = manager(message);
 
-  CuAssertStrEquals(testContext, "There is no file or directory:\nNon exisnant folder", buf);
+  CuAssertStrEquals(testContext, "There is no file or directory:\nNon exisnant folder", returned_str);
 }
 
 
 void should_get_files_number (CuTest* testContext) {
   memset(buf, 0, sizeof buf);
   
-buf = manager(message2);
+char *returned_str = manager(message2);
 
-  CuAssertStrEquals(testContext, "Files in directory:\n/home/travis\n18", buf);
+  CuAssertStrEquals(testContext, "Files in directory:\n/home/travis\n18", returned_str);
 }
 
 
@@ -134,9 +134,9 @@ void should_get_system_info (CuTest* testContext) {
   memset(buf, 0, sizeof buf);
   
 
-buf = manager(message3);
+char *returned_str = manager(message3);
 
-  CuAssertStrEquals(testContext, "System name:\nLinux", buf);
+  CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
 }
 
 CuSuite* test_suite() {
