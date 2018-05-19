@@ -10,9 +10,9 @@ char LS = '1';
 char FILES_NUMBER = '2';
 char OS_INFO = '3';
 
-char message[] = "1Non exisnant folder";
-char message2[] = "2/home/travis";
-char message3[] = "3";
+char message[1024] = "1Non exisnant folder";
+char message2[1024] = "2/home/travis";
+char message3[1024] = "3";
 
 char buf[1024];
 
