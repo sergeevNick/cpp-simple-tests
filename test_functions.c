@@ -170,6 +170,8 @@ void all_tests()
 
 int main(void)
 {
-	all_tests();
+	 
+    if(all_tests() == 1)
+        return 0;
     
 }
