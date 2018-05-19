@@ -5,4 +5,4 @@ script:
 - gcc CuTest.c client.c -o t
 #- gcc CuTest.c test_functions.c -o t
 #- ./t
-- ./server & ./t
+- ./server && ./t
