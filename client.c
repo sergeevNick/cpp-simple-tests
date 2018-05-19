@@ -90,8 +90,8 @@ int main()
     //recv(sock, buf, sizeof(message), 0);
     
   //  printf(buf);
-
-	int status = all_tests();
+int status = 1;
+	status = all_tests();
 
     close(sock);
 
