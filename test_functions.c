@@ -51,7 +51,7 @@ const char * getLS(char * path) {
 	return res;
 }
 
-void getFilesNumber(char * path) {
+const char *  getFilesNumber(char * path) {
 	int count = 0;
 	char append[5];
 	DIR * d;
@@ -72,29 +72,26 @@ void getFilesNumber(char * path) {
 		strcat(res, "\n");
 		sprintf(append, "%d", count);
 		strcat(res, append);
-		printf("%s\n%s\n%d\n", "Files in directory:", path, count);
 	}
 	else {
 		strcat(res, "There is no file or directory:\n");
 		strcat(res, path);
-		printf("%s\n%s\n", "There is no file or directory:", path);
 	}
 
 	send(sock, res, strlen(res), 0);
 	closedir(d);
+    return(res);
 }
 
-void getOSInfo() {
+const char *  getOSInfo() {
 	char * res = (char *)malloc(256);
 	struct utsname sysinfo;
 	uname(&sysinfo);
 
 	strcat(res, "System name:\n");
 	strcat(res, sysinfo.sysname);
-	printf("%s\n%s\n", "System name:", sysinfo.sysname);
-
-
-	send(sock, res, strlen(res), 0);
+	
+    return(res);
 }
 
 void manager(char * buf) {
