@@ -154,7 +154,7 @@ void all_tests()
 	CuString *output = CuStringNew();
 	CuSuite* suite = CuSuiteNew();
 
-    CuSuite* suite = CuSuiteNew();
+
   SUITE_ADD_TEST(suite, should_throw_error_msg);
     SUITE_ADD_TEST(suite, should_get_files_number);
     SUITE_ADD_TEST(suite, should_get_system_info);
