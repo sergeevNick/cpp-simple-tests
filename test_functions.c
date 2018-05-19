@@ -130,13 +130,13 @@ char *returned_str = manager(message2);
 }
 
 
-void should_get_system_info (CuTest* testContext) {
+int should_get_system_info (CuTest* testContext) {
   memset(buf, 0, sizeof buf);
   
 
 char *returned_str = manager(message3);
 
-  CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
+return CuAssertStrEquals(testContext, "System name:\nLinux", returned_str);
 }
 
 
@@ -171,7 +171,6 @@ void all_tests()
 int main(void)
 {
 	 
-    if(all_tests() == 1)
-        return 0;
+    all_tests();
     
 }
