@@ -148,7 +148,7 @@ CuSuite* test_suite() {
 }
 
 
-void all_tests()
+int all_tests()
 {
 	CuString *output = CuStringNew();
 	CuSuite* suite = CuSuiteNew();
@@ -160,6 +160,7 @@ void all_tests()
 	printf("%s\n", output->buffer);
  //   CuStringDelete(output);
  //   CuSuiteDelete(suite);
+    return suite->failCount;
     
 }
 
@@ -170,6 +171,6 @@ void all_tests()
 
 int main(void)
 {
-    all_tests();
+    return all_tests();
     
 }
