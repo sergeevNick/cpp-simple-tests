@@ -158,6 +158,8 @@ void all_tests()
 	CuSuiteSummary(suite, output);
 	CuSuiteDetails(suite, output);
 	printf("%s\n", output->buffer);
+    CuStringDelete(output);
+    CuSuiteDelete(suite);
 }
 
 /*----------------------------------------------------------------------
