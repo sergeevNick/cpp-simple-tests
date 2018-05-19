@@ -159,7 +159,9 @@ void all_tests()
 	CuSuiteDetails(suite, output);
 	printf("%s\n", output->buffer);
     CuStringDelete(output);
-    CuTestDelete(suite);
+    CuTestDelete(should_throw_error_msg);
+    CuTestDelete(should_get_files_number);
+    CuTestDelete(should_get_system_info);
     CuSuiteDelete(suite);
     
 }
